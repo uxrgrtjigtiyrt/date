@@ -19,31 +19,6 @@ class Main extends React.Component {
     };
   }
 
-  componentDidMount() {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=a36305ddf529faa0c37acbf47e633d08&language=ko-kr"
-      )
-      .then(response => {
-        console.log(response);
-        this.setState({ movies: response.data.results });
-      })
-      .catch(err => {
-        console.log("err!!", err);
-      });
-    axios
-      .get(
-        "https://api.themoviedb.org/3/trending/movie/week?api_key=a36305ddf529faa0c37acbf47e633d08&language=ko-kr"
-      )
-      .then(response => {
-        console.log(response);
-        this.setState({ movies2: response.data.results });
-      })
-      .catch(err => {
-        console.log("err!!", err);
-      });
-  }
-
   render() {
     return (
       <>

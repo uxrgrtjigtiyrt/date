@@ -5,7 +5,7 @@ import Banner from "../components/Banner";
 import withLayout from "../components/withLayout";
 import Date from "../components/Date";
 
-const MovieContainerWrapper = styled.div`
+const ContainerWrapper = styled.div`
   & > *:not(:last-child) {
     margin-bottom: 25px;
   }
@@ -47,11 +47,11 @@ class Main extends React.Component {
   render() {
     return (
       <>
-        <MovieContainerWrapper
+        <ContainerWrapper
           style={{ marginTop: "5%", overflowX: "hidden", overflowY:"hidden", width: "100%" }}
         >
           <Date></Date>
-        </MovieContainerWrapper>
+        </ContainerWrapper>
       </>
     );
   }

@@ -62,10 +62,9 @@ const Banner = props => {
       <Wrapper>
         <NavText>
           <NavTextItem className="asd" onClick={setFont}>
-            <Link to="/">1person</Link>
+          
           </NavTextItem>
           <NavTextItem className="asd" onClick={setFont}>
-            <Link to="/2p">2person</Link>
           </NavTextItem>
         </NavText>
       </Wrapper>

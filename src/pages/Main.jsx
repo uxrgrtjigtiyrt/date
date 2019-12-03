@@ -4,6 +4,7 @@ import axios from "axios";
 import Banner from "../components/Banner";
 import withLayout from "../components/withLayout";
 import Date from "../components/Date";
+import Result from "../components/result";
 
 const ContainerWrapper = styled.div`
   & > *:not(:last-child) {
@@ -11,13 +12,28 @@ const ContainerWrapper = styled.div`
   }
 `;
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movies: [],
-      movies2 : []
-    };
-  }
+
+
+  handlingEdit = (e)=>{
+    e.preventDefault();
+    const {editInfoData} = this.props;
+    const {dataInformation} = this.props;
+    let {toggle} = this.state;
+    if (toggle){
+        editInfoData({
+            name:this.state.name,
+            phone:this.state.phone
+        },dataInformation.key);
+    }else{
+        this.setState({
+           name:dataInformation.name,
+           phone:dataInformation.phone
+        });
+    }
+   this.setState({
+      toggle: !this.state.toggle
+   });
+};
 
   render() {
     return (
@@ -25,7 +41,7 @@ class Main extends React.Component {
         <ContainerWrapper
           style={{ marginTop: "5%", overflowX: "hidden", overflowY:"hidden", width: "100%" }}
         >
-          <Date></Date>
+          <Result></Result>
         </ContainerWrapper>
       </>
     );

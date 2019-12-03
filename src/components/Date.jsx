@@ -15,22 +15,38 @@ function check(e){
 
 
 class Date extends React.Component {
-
-  state = {
-    checked: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,],
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: false,
+    }
   }
+  
   ifx = i => {
     this.setState({
-      checked: this.state.checked[i]=1,
+      checked: !this.state.checked,
     });
   }
 
   ifnx = i => {
     this.setState({
-      checked: this.state.checked[i]=0,
+      checked: !this.state.checked,
     });
   }
 
+  editInfoData = (externalData, id)=>{
+    let {info} = this.state;
+    this.setState({
+    info:info.map(data=>{
+    if(data.key === id){
+    return {
+    ...externalData,
+    key:id
+    }
+    }
+    })
+    })
+    };
 
   onClickDay=u=>{
     let i;
@@ -52,16 +68,18 @@ class Date extends React.Component {
     if(ch.check==false){
       ch.check=true;
       ch.innerHTML=v;
-
+      this.ifnx(i);
     }
     
     else if(ch.check==true){
       ch.check=false;
       ch.innerHTML="X";
+      this.ifx(i);
     }
     else if(ch.check==undefined){
       ch.check=false;
       ch.innerHTML="X";
+      this.ifx(i);
     }
     console.log(this.state.checked);
   }

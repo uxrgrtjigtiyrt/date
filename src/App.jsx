@@ -20,18 +20,13 @@ a {
 
 `;
 
+
+
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Router>
-        <Route path="/" exact>
           <Main />
-        </Route>
-        <Route path="/2p" exact>
-          <Main />
-        </Route>
-      </Router>
     </>
   );
 };

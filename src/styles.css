@@ -1,0 +1,74 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: #141823;
+  z-index: 1;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.stopwatch {
+  text-align: center;
+}
+
+.stopwatch__display {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 30px;
+}
+
+.stopwatch__history {
+  margin-top: 15px;
+}
+
+ul {
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 0;
+  display:flex;
+  justify-content: center;
+}
+
+li {
+  padding: 5px;
+  display:block;
+  border: 1px solid #141823;
+  width:200px;
+  
+}
+
+li:hover {
+  background-color: #f7f8f9;
+}
+
+li:last-child {
+  display: none;
+}
+
+button{
+  font-size:50px;
+  background-color:brown;
+  border:1px solid black;
+  border-radius: 10px;
+  margin-right:20px;
+}
+span{
+  font-size:100px;
+}
+.stopwatch{
+  background-color:greenyellow;
+}
